@@ -5,10 +5,12 @@ function isManager(id) {
 }
 
 function getRelatedEmployees(managerId) {
-  // seu código aqui
+  if (isManager(managerId) === false) {
+    throw new Error('O id inserido não é de uma pessoa colaboradora gerente!');
+  } else {
+    const employe = data.employees.filter((empregado) => empregado.managers.includes(managerId));
+    return employe.map((elemento) => `${elemento.firstName} ${elemento.lastName}`);
+  }
 }
-
-console.log(isManager('c5b83cb3-a451-49e2-ac45-ff3f54fbe7e1'));
-console.log(isManager('9e7d4524-363c-416a-8759-8aa7e50c0992'));
 
 module.exports = { isManager, getRelatedEmployees };
