@@ -28,11 +28,11 @@ function calculateEntry(entrants) {
   if (h.length === 0) {
     return 0;
   }
-  const jonatas = countEntrants(entrants);
+  const priceTotal = countEntrants(entrants);
   return (
-    jonatas.child * data.prices.child
-    + jonatas.adult * data.prices.adult
-    + jonatas.senior * data.prices.senior
+    priceTotal.child * data.prices.child
+    + priceTotal.adult * data.prices.adult
+    + priceTotal.senior * data.prices.senior
   );
 }
 
